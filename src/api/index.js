@@ -7,7 +7,7 @@ const BASE = 'https://fitnesstrac-kr.herokuapp.com/api';
 
 export async function getUsers() {
   try {
-    const { data } = await axios.get(`${ BASE }/users`);
+    const { data } = await axios.get(`${ BASE }/users/me`);
     return data;
   } catch (error) {
     throw error;

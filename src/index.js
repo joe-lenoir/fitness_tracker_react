@@ -18,7 +18,7 @@ import {
   // UserRoutines
 } from "./components";
 
-//import { getUsers, getRoutinesByUser } from "./api";
+import { getUsers, getRoutinesByUser } from "./api";
 
 import { getCurrentUser } from "./auth";
 
@@ -29,31 +29,31 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(getCurrentUser());
   const [userRoutines, setUserRoutines] = useState([]);
 
-  // useEffect(() => {
-  //   getUsers()
-  //     .then((users) => {
-  //       setUserList(users);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error)
-  //     });
-  // }, []);
+  useEffect(() => {
+    getUsers()
+      .then((users) => {
+        setUserList(users);
+      })
+      .catch((error) => {
+        console.error(error)
+      });
+  }, []);
 
-  // useEffect(() => {
-  //   if (!currentUser) {
-  //     setUserRoutines([]);
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!currentUser) {
+      setUserRoutines([]);
+      return;
+    }
 
-  //   getRoutinesByUser(currentUser.id)
-  //     .then((routines) => {
-  //       setUserRoutines(routines);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error)
-  //     });
+    getRoutinesByUser(currentUser.id)
+      .then((routines) => {
+        setUserRoutines(routines);
+      })
+      .catch((error) => {
+        console.error(error)
+      });
 
-  // }, [currentUser]);
+  }, [currentUser]);
 
   return (
     <Router>
