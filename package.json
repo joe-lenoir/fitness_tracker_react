@@ -28,15 +28,4 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joe-lenoir/fitness_tracker_react.git"
-  },
-  "bugs": {
-    "url": "https://github.com/joe-lenoir/fitness_tracker_react/issues"
-  },
-  "homepage": "https://github.com/joe-lenoir/fitness_tracker_react#readme",
-  "description": ""
-}
+  }}
